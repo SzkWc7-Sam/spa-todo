@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo App</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/lib/jquery-3.5.0.min.js"></script>
+
+	<script src="js/main.js" type="module"></script>
+</head>
+<body>
+	<header>
+		<h1>Todo Application</h1>
+		<nav data-auth="true"><span data-field="user.name"></span> | <a href="#/logout">Logout</a></nav>
+	</header>
+
+	<main>
+		<p>Loading...</p>
+	</main>
+
+	<footer>
+		<p>&copy; 2021</p>
+	</footer>
+
+	<!-- T E M P L A T E S -->
+
+	<template id="tpl-login">
+		<div>
+			<h2>Login</h2>
+			<form>
+				<label>Name</label>
+				<input name="username" required />
+				<label>Password</label>
+				<input name="password" type="password" required />
+				<button data-action="login" class="primary">Login</button> <button data-action="register" class="secondary">Register</button>
+			</form>
+			<p data-field="error" class="message danger"></p>
+		</div>
+	</template>
+
+	<template id="tpl-logout">
+		<div>
+			<h2>Und Tschüss!</h2>
+			<p><a href="#/">Back to login</a></p>
+		</div>
+	</template>
+
+	<template id="tpl-add-todo">
+		<div>
+			<h2>Add Todo</h2>
+			<form>
+				<label>Title<sup>*</sup></label>
+				<input name="title" required />
+				<label>Category</label>
+				<input name="category" />
+				<label>Due Date</label>
+				<input name="date" type="date" />
+				<button data-action="add" class="primary">Add</button> <button data-action="cancel" class="secondary">Cancel</button>
+			</form>
+			<p data-field="error" class="message danger"></p>
+		</div>
+	</template>
+
+	<template id="tpl-edit-todo">
+		<div>
+			<h2>Edit Todo</h2>
+			<form>
+				<label>Title<sup>*</sup></label>
+				<input name="title" required />
+				<label>Category</label>
+				<input name="category" />
+				<label>Due Date</label>
+				<input name="date" type="date" />
+				<button data-action="save" class="primary">Save</button> <button data-action="cancel" class="secondary">Cancel</button>
+			</form>
+			<p data-field="error"></p>
+		</div>
+	</template>
+</body>
+</html>
