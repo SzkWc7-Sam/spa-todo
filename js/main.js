@@ -5,7 +5,7 @@ import todos from './components/todos.js';
 import addTodo from './components/add-todo.js';
 import editTodo from './components/edit-todo.js';
 
-router.register('/', login);
+router.register('/', todos);
 router.register('/logout', logout);
 router.register('/todos', todos);
 router.register('/add-todo', addTodo);
